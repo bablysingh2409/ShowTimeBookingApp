@@ -2,11 +2,13 @@ import React, { useEffect } from 'react';
 import { showSelector } from '../redux/reducer/showsReducer';
 import { useSelector, useDispatch } from 'react-redux';
 import { getShows } from '../redux/actions/showsActions';
+import { useNavigate } from 'react-router-dom';
 
 
 function ShowList() {
     const { shows, loading } = useSelector(showSelector);
     const dispatch = useDispatch();
+    const navigate=useNavigate();
    
 
     useEffect(() => {
@@ -14,7 +16,7 @@ function ShowList() {
     }, []);
 
  const handleClick=(id)=>{
-     console.log(id);
+     navigate(`/show-details/${id}`)
  }
 
     if (loading) {

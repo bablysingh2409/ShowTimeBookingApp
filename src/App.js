@@ -1,6 +1,7 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Nav from "./components/Nav";
 import ShowList from "./components/ShowList";
+import ShowDetails from "./components/ShowDetails";
 
 function App() {
 const router=createBrowserRouter([
@@ -11,6 +12,10 @@ const router=createBrowserRouter([
       {
         path:'/',
         element:<ShowList/>
+      },
+      {
+        path:'/show-details/:id',
+        element:<ShowDetails/>
       }
     ]
   }
