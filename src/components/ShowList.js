@@ -14,7 +14,7 @@ function ShowList() {
 
     useEffect(() => {
         dispatch(getShows());
-    }, []);
+    }, [dispatch]);
 
  const handleClick=(id)=>{
      navigate(`/show-details/${id}`)

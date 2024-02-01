@@ -11,10 +11,10 @@ function ShowDetails() {
 
 
     useEffect(() => {
-        const showDetails = shows.filter((sh) => sh.show.id == id);
+        const showDetails = shows.filter((sh) => sh.show.id === parseInt(id, 10));
         console.log(showDetails)
         setShow([...showDetails])
-    }, []);
+    }, [id,shows]);
 
     const handleBooking = (showName) => {
          navigate(`/book-show/${showName}`)
@@ -33,7 +33,7 @@ function ShowDetails() {
                             <div key={u.show.id} className='flex p-4 
                            h-full shadow-lg shadow-[#0766AD] gap-3'>
                                 <div className='w-[30%]'>
-                                    <img src={imgUrl} />
+                                    <img src={imgUrl} alt='show-img'/>
                                 </div>
                                 <div className='w-[50%]  flex flex-col p-3 items-center'>
                                     <h1 className='text-5xl uppercase font-bold text-[#7E2553]'>{u.show.name}</h1>
