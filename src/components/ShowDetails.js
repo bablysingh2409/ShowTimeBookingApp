@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { showSelector } from '../redux/reducer/showsReducer';
 
@@ -7,6 +7,7 @@ function ShowDetails() {
     const { id } = useParams();
     const [show, setShow] = useState([]);
     const { shows } = useSelector(showSelector);
+    const navigate=useNavigate();
 
 
     useEffect(() => {
@@ -15,9 +16,9 @@ function ShowDetails() {
         setShow([...showDetails])
     }, []);
 
-    const handleBooking = (id) => {
-        
-
+    const handleBooking = (showName) => {
+         navigate(`/book-show/${showName}`)
+ 
     }
 
     return (
@@ -51,7 +52,7 @@ function ShowDetails() {
                                   pl-4 text-[#3B3486] text-sm'>{u.show.rating.average}/10</span></h1>
                                     </div>
                                     <button className=' p-2  border-2 border-[#294B29] bg-[#294B29] w-full m-auto text-xl font-bold text-white hover:text-[#294B29]
-                                 hover:bg-white rounded' onClick={() => handleBooking(u.show.id)}>Book Show</button>
+                                 hover:bg-white rounded' onClick={() => handleBooking(u.show.name)}>Book Show</button>
                                 </div>
                             </div>)
                     })

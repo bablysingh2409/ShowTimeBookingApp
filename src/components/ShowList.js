@@ -37,14 +37,14 @@ function ShowList() {
                             return (
                                 <div className='m-3 p-5 w-[20%]  border-2 border-[#0766AD] shadow-md shadow-[#0766AD]
                                 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-102
-                                 cursor-pointer' key={sh.show.id}>
+                                 cursor-pointer flex flex-col items-center' key={sh.show.id}>
                               
                                         <h1 className='text-center text-2xl uppercase font-bold
                                                        text-[#D63484] p-2 '>{sh.show.name}</h1>
-                                        <h1 className='text-lg font-semibold text-[#561C24]'>Language:{sh.show.language}</h1>
-                                        <h1 className='text-lg font-semibold text-[#720455]'>Genres:{sh.show.genres[0]}</h1>
-                                        <button className='w-[60%] float-end p-1 border-2 border-[#0766AD] bg-[#0766AD] text-white rounded-md 
-                                     text-lg m-auto font-semibold hover:bg-[#91C8E4] hover:text-black mt-4' onClick={()=>handleClick(sh.show.id)}>More Details</button>
+                                        <h1 className='text-lg font-semibold text-[#561C24] text-center'>Language:{sh.show.language}</h1>
+                                        <h1 className='text-lg font-semibold text-[#720455] text-center'>Genres:{sh.show.genres[0]}</h1>
+                                        <button className='w-[60%] p-1 border-2 border-[#0766AD] bg-[#0766AD] text-white rounded-md 
+                                     text-lg  font-semibold hover:bg-[#91C8E4] hover:text-black mt-4 ' onClick={()=>handleClick(sh.show.id)}>More Details</button>
                                   
                                 </div>
                                 
