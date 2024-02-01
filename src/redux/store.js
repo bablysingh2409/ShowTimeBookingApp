@@ -3,7 +3,7 @@ import { showReducer } from "./reducer/showsReducer";
 
 
 export const store=configureStore({
-    reducer:[
+    reducer:{
         showReducer
-    ]
+    }
 })
