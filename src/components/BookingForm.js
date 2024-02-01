@@ -1,5 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, {useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import {toast} from 'react-toastify';
+
+  
 
 
 function BookingForm() {
@@ -14,9 +17,12 @@ const navigate=useNavigate();
 const {showName}=useParams();
 
 const handleSubmit=(e)=>{
-   e.preventDefault();
+    e.preventDefault();
+    toast('your ticket is booked');
    // Saving user details to local storage
    localStorage.setItem('userDetails', JSON.stringify(userData));
+  
+
    navigate('/')
 }
 
@@ -59,10 +65,11 @@ const handleChange = (e) => {
                       border-[#B6BBC4] rounded-md text-lg m-2' onChange={handleChange} value={userData.ticket} min='1' />
                     </div>
                     <button type="submit" className='w-[40%] p-3 border-2 border-[#0766AD] bg-[#0766AD] text-white rounded-md 
-                       text-xl m-auto font-semibold hover:bg-[#91C8E4] hover:text-black mt-7'>Update User</button>
+                       text-xl m-auto font-semibold hover:bg-[#91C8E4] hover:text-black mt-7'>Book Ticket</button>
                 </form>
 
             </div>
+            
         </div>
     )
 }

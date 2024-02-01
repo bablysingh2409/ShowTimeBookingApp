@@ -4,6 +4,7 @@ import ShowList from "./components/ShowList";
 import ShowDetails from "./components/ShowDetails";
 import BookingForm from "./components/BookingForm";
 
+
 function App() {
 const router=createBrowserRouter([
   {
@@ -26,12 +27,8 @@ const router=createBrowserRouter([
   }
 ])
  
-  return (
-    <RouterProvider router={router}>
-    <div className="">
-    </div>
-    </RouterProvider>
-  );
+  return <RouterProvider router={router}></RouterProvider>
+  
 }
 
 export default App;

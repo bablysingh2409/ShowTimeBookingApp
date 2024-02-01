@@ -3,6 +3,7 @@ import { showSelector } from '../redux/reducer/showsReducer';
 import { useSelector, useDispatch } from 'react-redux';
 import { getShows } from '../redux/actions/showsActions';
 import { useNavigate } from 'react-router-dom';
+import Loader from './Loader';
 
 
 function ShowList() {
@@ -20,7 +21,7 @@ function ShowList() {
  }
 
     if (loading) {
-        return <p>loading.....</p>
+        return <Loader/>
     }
 
     return (
